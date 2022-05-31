@@ -1,5 +1,5 @@
 import numpy as np
-from numpy import pi, exp, sign, cos, sqrt
+from numpy import pi, exp, sign, cos, sin, sqrt
 from numpy.fft import fft, fftshift
 from typing import Sequence
 from config import SignalParams
@@ -53,7 +53,7 @@ def time_multiplexing(*signals: Sequence[np.ndarray]) -> Signal:
 def alt_boc_multiplexing(signal1: np.ndarray, signal2: np.ndarray) -> Signal:
     # Косинусная и синусная поднесущие
     sc_cos = sign(cos(2*pi*SignalParams.f_sin*SignalParams.tt))
-    sc_sin = sign(cos(2*pi*SignalParams.f_sin*SignalParams.tt))
+    sc_sin = sign(sin(2*pi*SignalParams.f_sin*SignalParams.tt))
 
     sc_ssb = 1/sqrt(2)*(sc_cos+1j*sc_sin)  # Однополпсная поднесущая
     # Комлексно-сопряжённая однополоссная поднесущая

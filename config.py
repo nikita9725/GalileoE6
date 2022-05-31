@@ -12,13 +12,13 @@ class E6PrimaryCodes(Enum):
 
 
 class SignalParams:
-    t_pc = 100.0e-3  # Период дальномерного кода
+    t_pc: float = 100.0e-3  # Период дальномерного кода
     fs: float = 90e7  # Частота дискретизации
     fif: float = 20e6  # Промежутояная частота
     f_sin: float = 7*1.023e6  # Частота символьной последовательности
     fc: float = 5.115e6  # Тактовая частотадальномерного кода
     dt: float = 1*1.0e-3  # Шаг модели по времени
-    code_len: int = 5116
+    code_len: int = 5115
     fd_carr1: float = 1.6*1.25e3  # Доплер несущей
     fd_code1: float = fd_carr1/1540  # Доплер несушей
     carr_ph1: float = 0.0  # Начальная фаза
